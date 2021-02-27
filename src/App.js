@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 
-import FeedbackOptions from "./components/FeedbackOptions/FeedbackOptions";
-import Statistic from "./components/Statistic/Statistic";
+import FeedbackOptions from "./components/FeedbackOptions";
+import Statistic from "./components/Statistic";
+import Section from "./components/Section";
 
 class App extends Component {
   static defaultProps = {
@@ -49,17 +50,22 @@ class App extends Component {
     const options = Object.keys(this.state);
     return (
       <div>
-        <FeedbackOptions
-          options={options}
-          onLeaveFeedback={this.handleFeedback}
-        />
-        <Statistic
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={countTotalFeedback()}
-          positivePercentage={countPositiveFeedback()}
-        />
+        <Section title={"Please leave feedback"}>
+          <FeedbackOptions
+            options={options}
+            onLeaveFeedback={this.handleFeedback}
+          />
+        </Section>
+
+        <Section title={"Statistics"}>
+          <Statistic
+            good={good}
+            neutral={neutral}
+            bad={bad}
+            total={countTotalFeedback()}
+            positivePercentage={countPositiveFeedback()}
+          />
+        </Section>
       </div>
     );
   }
