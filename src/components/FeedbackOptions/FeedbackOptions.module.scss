@@ -1,0 +1,18 @@
+.button {
+  margin: 15px;
+  padding: 5px 10px;
+  max-width: 120px;
+  border-radius: 10px;
+  color: black;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #818381;
+  box-shadow: 2px 2px 2px 0px #a09c9c;
+  text-transform: capitalize;
+  &:hover,
+  &:focus {
+    background-color: #818381;
+    transform: scale(1.5);
+  }
+
+}
